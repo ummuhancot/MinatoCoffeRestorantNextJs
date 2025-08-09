@@ -2,12 +2,12 @@ import DashboardProductList from "@/components/dashboard-product-list";
 import { notFound } from "next/navigation";
 import catData from "@/helpers/data/products-cat.json";
 import ProductsHeader from "@/components/productsHeader";
-import { cache } from "react";
+
 
 const API_URL = `https://68847e9b745306380a386b6a.mockapi.io/sari/coffe/user`;
 
 const Page = async () => {
-  const res = await fetch(API_URL, { cache: "force-cache" });
+  const res = await fetch(API_URL, { cache: "force-cache" , next: { revalidate: 10 } });
 
   
   //{cache:'force-cache'} leaut daki data cache edecegiz

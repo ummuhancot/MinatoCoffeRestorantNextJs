@@ -39,8 +39,9 @@ const DashboardProductList = ({ user }) => {
                 />
               </td>
               <td className="text-end">
-                <ButtonEditProducts id={item.id} />
-                <ButtonDeleteProducts id={item.id} />
+                <ButtonEditProducts id={`${item.id}`} />
+                <ButtonDeleteProducts id={`${item.id}`} />
+               
               </td>
             </tr>
           ))}

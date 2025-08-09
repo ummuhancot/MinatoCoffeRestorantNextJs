@@ -9,7 +9,7 @@ const ButtonEditProducts = ({ id }) => {
       variant="link"
       as={Link}
       href={`/dashboard/products/${id}`}
-      style={{ color: "yellow", fontSize: "20px" }}
+      className="edit-btn"
     >
       <FaEdit />
     </Button>

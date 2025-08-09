@@ -3,6 +3,8 @@ import ProductsHeader from "@/components/productsHeader";
 import ProductsList from "@/components/productsList";
 import catData from "@/helpers/data/products-cat.json";
 
+
+
 const Page = async () => {
   const res = await fetch(
     "https://68847e9b745306380a386b6a.mockapi.io/sari/coffe/user"

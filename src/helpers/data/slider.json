@@ -1,10 +1,8 @@
 [
-  { "id": 1, "image": "milkMinato.jpeg", "title" : "en sevdiğiniz dizileri veya animeleri izleyebilirsiniz"},
-  { "id": 2, "image": "minato.png" , "title" : "en sevdiğiniz oyunları oynayabilirsiniz"},
-  { "id": 3, "image": "minatoo.png","title" :"sohbet edebilirsin" },
-  { "id": 4, "image": "MinatoWelcome.jpeg","title" : "hep beraber sohbet edebilirsin"},
-  { "id": 5, "image": "mino.jpeg" ,"title":"istediğiniz mangaları okuya bilirsiniz" },
-  { "id": 6, "image": "mino1.jpg", "title": "resim yapabilir" },
-  { "id": 7, "image": "mino2.jpg", "title": "isterseniz canlı müziklete müzikal gurubumuza eşlik edebilirniz" },
-  { "id": 8, "image": "mino3.jpeg", "title": "bilemedim" }
+  { "id": 1, "image": "minatocoffe.png", "title" : "minato coffee'ye hoş geldiniz" },
+  { "id": 2, "image": "game.png" , "title" : "en sevdiğiniz oyunları oynayabilirsiniz"},
+  { "id": 3, "image": "manga.png" ,"title":"istediğiniz mangaları okuya bilirsiniz" },
+  { "id": 4, "image": "anime.png", "title": "en sevdiğiniz dizileri veya animeleri izleyebilirsiniz" },
+  { "id": 5, "image": "catroom.png", "title": "kedi severler için kedi adamız var" },
+  { "id": 6, "image": "catshop.png", "title": "Aynı zamanda kedileri sahiplene bilirsiniz" }
 ]

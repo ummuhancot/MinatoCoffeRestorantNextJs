@@ -3,6 +3,6 @@
   { "id": 2, "title": "Classic Coffee Types", "url": "/classic", "prefetch": true },
   { "id": 3, "title": "Milk Based Coffees", "url": "/milk", "prefetch": true },
   { "id": 4, "title": " Sweet & Flavored Coffees", "url": "/sweet", "prefetch": true },
-  { "id": 5, "title": "Cold Coffee Types", "url": "/cold", "prefetch": true }
-  
+  { "id": 5, "title": "Cold Coffee Types", "url": "/cold", "prefetch": true },
+   { "id": 6, "title": "Cat Shop", "url": "/products", "prefetch": true }
 ]

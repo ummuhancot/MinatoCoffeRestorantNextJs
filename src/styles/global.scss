@@ -150,6 +150,49 @@ footer .nav-link.active{
 }
 
 
+.delete-btn {
+  color: red;
+  font-size: 25px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: darkred;
+    transform: scale(1.2);
+  }
+
+  &:active {
+    transform: scale(0.9);
+    color: #ff1a1a;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+    border-radius: 50%;
+  }
+}
+
+.edit-btn {
+  color: rgb(255, 208, 0);
+  font-size: 20px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: rgb(0, 255, 213);
+    transform: scale(1.2);
+  }
+
+  &:active {
+    transform: scale(0.9);
+    color: #33ccff;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 255, 128, 0.6);
+    border-radius: 50%;
+  }
+}
 
 
 /* body 
