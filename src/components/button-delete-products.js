@@ -5,14 +5,17 @@ import { Button } from "react-bootstrap";
 import { MdDeleteSweep } from "react-icons/md";
 
 
-const ButtonDeleteProducts = ({ id }) => {
-  const handleDelete = () => {
+const ButtonDeleteProducts =  ({ id }) => {
+  const handleDelete = async () => {
     const confirmDelete = confirm(
       "Are you sure you want to delete this product?"
     );
     if (!confirmDelete) return; 
 
-    deleteProductAction(id);
+    const res = await deleteProductAction(id);
+
+    if(res.message) 
+      alert(res.message);
   };
 
   return (
