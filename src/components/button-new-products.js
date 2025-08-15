@@ -14,7 +14,10 @@ const ButtonNewProducts = ({ id }) => {
     href={`/dashboard/products/new`}
     className="d-flex align-items-center justify-content-center"
     >
-      <FaRegPlusSquare /> New
+      <div  style={{ fontSize: "19px" }}>
+        <FaRegPlusSquare />
+      </div>
+
     </Button>
   );
 };
