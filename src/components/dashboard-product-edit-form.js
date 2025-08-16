@@ -1,16 +1,19 @@
+// components/dashboard-product-edit-form.jsx
 "use client";
-import { createProductAction } from "@/actions/product-actions";
+import { updateProductAction } from "@/actions/product-actions";
 import React, { useState } from "react";
 import { Alert, Button, Form, Row, Col, Image } from "react-bootstrap";
 import { useActionState } from "react";
 import cats from "@/helpers/data/products-cat.json";
 
-const DashboardProductNewForm = () => {
+const DashboardProductEditForm = ({ user }) => {
   const initialState = { ok: null, message: null, errors: null };
-  const [state, formAction] = useActionState(createProductAction, initialState);
+  const [state, formAction] = useActionState(updateProductAction, initialState);
 
-  // Seçili kedi
-  const [selectedCat, setSelectedCat] = useState(null);
+  // Seçili kedi başlangıç olarak user verisinden
+  const [selectedCat, setSelectedCat] = useState(
+    user ? { img: user.img, price: user.price } : null
+  );
 
   const handleCatChange = (e) => {
     const catId = parseInt(e.target.value);
@@ -20,7 +23,6 @@ const DashboardProductNewForm = () => {
 
   return (
     <div>
-      {/* ❌ Hata mesajı */}
       {state.errors && !state.ok && (
         <Alert variant="danger">
           <Alert.Heading>Uh-oh!</Alert.Heading>
@@ -30,7 +32,6 @@ const DashboardProductNewForm = () => {
         </Alert>
       )}
 
-      {/* ✅ Başarı mesajı */}
       {state.ok && state.message && (
         <Alert variant="success">
           <Alert.Heading>Got it!</Alert.Heading>
@@ -38,7 +39,6 @@ const DashboardProductNewForm = () => {
         </Alert>
       )}
 
-      {/* 📝 Form */}
       <Form action={formAction}>
         <Row>
           <Col md={6}>
@@ -49,6 +49,7 @@ const DashboardProductNewForm = () => {
                 type="text"
                 name="title"
                 placeholder="Enter product name"
+                defaultValue={user?.title || ""}
                 required
               />
               <Form.Control.Feedback type="invalid">
@@ -65,6 +66,7 @@ const DashboardProductNewForm = () => {
                 type="text"
                 name="text"
                 placeholder="Enter product category or breed"
+                defaultValue={user?.text || ""}
                 required
               />
               <Form.Control.Feedback type="invalid">
@@ -74,13 +76,12 @@ const DashboardProductNewForm = () => {
           </Col>
         </Row>
 
-        {/* Kedi seçimi */}
         <Form.Group controlId="cat" className="mb-3">
           <Form.Label>Select Cat</Form.Label>
           <Form.Select
             name="catId"
             onChange={handleCatChange}
-            defaultValue=""
+            value={selectedCat?.id || ""}
             required
           >
             <option value=""> == Select a cat == </option>
@@ -92,18 +93,17 @@ const DashboardProductNewForm = () => {
           </Form.Select>
         </Form.Group>
 
-        {/* Seçili kedinin önizlemesi */}
         {selectedCat && (
           <div className="mb-3">
             <Image
               src={selectedCat.img}
-              alt={`Cat ${selectedCat.id}`}
+              alt={`Cat`}
               thumbnail
               style={{ maxWidth: "150px" }}
             />
             <p className="mt-2">Price: ${selectedCat.price}</p>
-
-            {/* Formdan gönderilecek gizli inputlar */}
+            {/* Gizli inputlar */}
+            <input type="hidden" name="id" value={user.id} />
             <input type="hidden" name="img" value={selectedCat.img} />
             <input type="hidden" name="price" value={selectedCat.price} />
           </div>
@@ -111,16 +111,15 @@ const DashboardProductNewForm = () => {
 
         <Form.Group className="mt-4">
           <Button variant="dark" type="submit" className="me-3">
-            Add cat
+            Save
           </Button>
           <Button variant="secondary" href="/dashboard/products">
             Back to list
           </Button>
         </Form.Group>
-       
       </Form>
     </div>
   );
 };
 
-export default DashboardProductNewForm;
+export default DashboardProductEditForm;

@@ -13,9 +13,70 @@ const FormSchema = Yup.object({
   img: Yup.string().required("Image is required"), 
   price: Yup.number()
     .required("Price is required")
+    .max(10000, "Price must be less than 10000")
+    .min(1, "Price must be greater than 0")
     .typeError("Price must be a number"),
 });
 
+export const updateProductAction = async (prevState, formData) => {
+  const payload = Object.fromEntries(formData.entries());
+
+  // price'ı number yap
+  if (payload.price) payload.price = Number(payload.price);
+
+  try {
+    // Validation
+    FormSchema.validateSync(payload, { abortEarly: false });
+
+    // PUT request: id formData'dan alınmalı
+    const res = await fetch(`${API_URL}/${payload.id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      throw new Error(
+        data?.message || `Ürün güncellenemedi (HTTP ${res.status})`
+      );
+    }
+
+    // Cache ve path yenile
+    revalidateTag("products");
+    revalidatePath("/dashboard/products");
+
+    return {
+      ok: true,
+      message: "Product updated successfully",
+      errors: null,
+    };
+  } catch (error) {
+    if (error instanceof Yup.ValidationError) {
+      // Yup validation hatalarını dön
+      const errors = {};
+      error.inner.forEach((err) => {
+        if (err.path) errors[err.path] = err.message;
+      });
+      return {
+        ok: false,
+        message: "Please fix the errors below",
+        errors,
+      };
+    }
+
+    return {
+      ok: false,
+      message: error.message || "An error occurred while updating the product",
+      errors: null,
+    };
+  }
+};
+
+
+
+// Ürün Ekleme
 export const createProductAction = async (prevState, formData) => {
   const payload = Object.fromEntries(formData.entries());
 
