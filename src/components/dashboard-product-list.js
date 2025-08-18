@@ -16,8 +16,10 @@ const DashboardProductList = ({ user }) => {
           <th>Text</th>
           <th>Price</th>
           <th>Image</th>
-          <th className="text-end">
-            <ButtonNewProducts />
+          <th className="d-flex flex-column">
+            <div>
+              <ButtonNewProducts />
+            </div>
           </th>
         </tr>
       </thead>
@@ -38,10 +40,9 @@ const DashboardProductList = ({ user }) => {
                   style={{ objectFit: "cover" }}
                 />
               </td>
-              <td className="text-end">
+              <td className="d-flex flex-column">
                 <ButtonEditProducts id={`${item.id}`} />
                 <ButtonDeleteProducts id={`${item.id}`} />
-               
               </td>
             </tr>
           ))}

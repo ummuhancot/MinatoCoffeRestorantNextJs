@@ -152,8 +152,9 @@ footer .nav-link.active{
 
 .delete-btn {
   color: red;
-  font-size: 25px;
+  font-size: 20px;
   transition: all 0.3s ease;
+
 
   &:hover {
     color: darkred;
@@ -178,22 +179,67 @@ footer .nav-link.active{
   transition: all 0.3s ease;
 
   &:hover {
-    color: rgb(0, 255, 213);
-    transform: scale(1.2);
+    color: rgb(255, 132, 0);
+    transform: scale(1.1);
   }
 
   &:active {
-    transform: scale(0.9);
-    color: #33ccff;
+    transform: scale(0.8);
+    color: #409bea;
   }
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 8px rgba(0, 255, 128, 0.6);
+    box-shadow: 0 0 8px rgba(42, 136, 236, 0.6);
     border-radius: 50%;
   }
 }
 
+
+.new-b-t-n {
+  color: rgb(21, 127, 241);
+  font-size: 20px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: black;
+    transform: scale(1.2);
+
+  }
+
+  &:active {
+    transform: scale(0.9);
+    color: #a733ff;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 255, 21, 0.6);
+    border-radius: 50%;
+  }
+}
+
+
+.b-t-n {
+  color: rgb(172, 103, 189);
+  font-size: 20px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color:#fff237 ;
+    transform: scale(1.1);
+
+  }
+
+  &:active {
+    transform: scale(0.9);
+    color: #ff3333;
+  }
+
+  &:focus {
+    box-shadow: 0 0 8px rgba(0, 255, 21, 0.6);
+  }
+}
 
 /* body 
   font-family: sans-serif;

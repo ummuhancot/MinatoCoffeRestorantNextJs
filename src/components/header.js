@@ -41,7 +41,7 @@ const Header = () => {
             className="me-2 py-1 px-2 d-flex align-items-center sarı productsHeader"
             style={{ fontWeight: "bold", fontSize: "2rem" }}
           >
-            SARI
+            AO 青
           </Badge>
           <Badge
             bg="dark"
@@ -51,7 +51,7 @@ const Header = () => {
             <PiBowlSteam color="#ffeb3b" size={30} />
           </Badge>
         </Navbar.Brand>
-        <Navbar.Toggle 
+        <Navbar.Toggle
           className="bg-warning-subtle "
           style={{ borderRadius: "8px", padding: "4px", color: "#eca516ff" }}
           aria-controls="basic-navbar-nav"

@@ -8,16 +8,18 @@ const ButtonNewProducts = ({ id }) => {
 
 
   return (
-    <Button variant="success" 
-    style={{ color: "yellow",fontSize:"10px"}}
-    as={Link}
-    href={`/dashboard/products/new`}
-    className="d-flex align-items-center justify-content-center"
+    <Button
+      style={{
+        backgroundColor: "#fff237",
+        border: "2px solid rgb(255, 208, 0)",
+      }}
+      as={Link}
+      href={`/dashboard/products/new`}
+      className="d-flex align-items-center justify-content-center"
     >
-      <div  style={{ fontSize: "19px" }}>
+      <div className="new-b-t-n">
         <FaRegPlusSquare />
       </div>
-
     </Button>
   );
 };

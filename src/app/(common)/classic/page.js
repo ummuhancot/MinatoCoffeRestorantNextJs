@@ -4,7 +4,7 @@ import React from 'react'
 export const metadata = {
 
   title:"classic",
-  description: "coffe of yellow",
+  description: "coffe of AO 青",
 
 }
 
@@ -20,46 +20,43 @@ const page = async () => {
           display: "flex",
           alignItems: "center",
           gap: "16px",
+          backgroundColor: "#000000a0",
+          color: "white",
+          padding: "10px",
+          borderRadius: "8px",
+          flexDirection: "row",
+          justifyContent: "center",
+          width: "100%",
+          height: "100%",
+          textAlign: "center",
+          fontWeight: "bold",
+          fontSize: "1.2rem",
+          boxShadow: "0px 0px 3px 5px #FFD600",
+          animation: "rot55 0.7s linear infinite",
         }}
       >
         <img
           src="/minato/MinatoWelcome.jpeg"
           alt="Welcome"
           style={{
-            width: "84px",
-            height: "84px",
+            width: "150px",
+            height: "150px",
             borderRadius: "50%",
             objectFit: "cover",
             border: "2px solid #FFD600",
           }}
         />
-        <div
-          style={{
-            backgroundColor: "#000000a0",
-            color: "white",
-            padding: "10px",
-            borderRadius: "8px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "200px",
-            height: "100px",
-            textAlign: "center",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-            boxShadow: "0px 0px 3px 5px #FFD600",
-            animation: "rot55 0.7s linear infinite"
-             
-          }}
-        >
+        <div>
           <div
             style={{ fontWeight: "bold", fontSize: "1.2rem", color: "white" }}
           >
             港
           </div>
           <div style={{ color: "#666", fontSize: "0.95rem", color: "white" }}>
-            ありがとうありがとう!
+            ありがとうありがとう! <hr />
+            「青い海は、静けさの中に力を隠している。」<br/> (Aoi umi wa, shizukesa no
+            naka ni chikara o kakushite iru.) <br/> “Mavi deniz, sessizliğin içinde
+            gücünü saklar.”
           </div>
         </div>
       </div>

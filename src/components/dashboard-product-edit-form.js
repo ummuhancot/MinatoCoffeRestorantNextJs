@@ -109,11 +109,11 @@ const DashboardProductEditForm = ({ user }) => {
           </div>
         )}
 
-        <Form.Group className="mt-4">
-          <Button variant="dark" type="submit" className="me-3">
+        <Form.Group >
+          <Button variant="dark" type="submit" className="me-3 b-t-n">
             Save
           </Button>
-          <Button variant="secondary" href="/dashboard/products">
+          <Button className="b-t-n" variant="dark" href="/dashboard/products">
             Back to list
           </Button>
         </Form.Group>

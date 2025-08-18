@@ -9,7 +9,7 @@ import MainMenuFooter from "./main-menu-footer";
 
 const Footer = () => {
   return (
-    <footer 
+    <footer
       className="p-5 mt-5"
       style={{
         color: "#ffeb3b",
@@ -94,7 +94,7 @@ const Footer = () => {
       >
         <PiWhatsappLogo size={30} />
       </span>
-      &copy; {new Date().getFullYear()} SARI. bizi takip edebilirsiniz.
+      &copy; {new Date().getFullYear()} AO [青]. bizi takip edebilirsiniz.
     </footer>
   );
 };

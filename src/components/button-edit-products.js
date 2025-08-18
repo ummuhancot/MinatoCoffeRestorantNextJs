@@ -9,7 +9,7 @@ const ButtonEditProducts = ({ id }) => {
       variant="link"
       as={Link}
       href={`/dashboard/products/${id}`}
-      className="edit-btn p-0"
+      className="edit-btn"
     >
       <FaEdit />
     </Button>

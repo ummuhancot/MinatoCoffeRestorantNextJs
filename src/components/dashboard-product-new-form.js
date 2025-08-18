@@ -110,14 +110,17 @@ const DashboardProductNewForm = () => {
         )}
 
         <Form.Group className="mt-4">
-          <Button variant="dark" type="submit" className="me-3">
+          <Button variant="dark" type="submit" className="me-3 b-t-n">
             Add cat
           </Button>
-          <Button variant="secondary" href="/dashboard/products">
+          <Button
+            className="b-t-n me-3"
+            variant="dark"
+            href="/dashboard/products"
+          >
             Back to list
           </Button>
         </Form.Group>
-       
       </Form>
     </div>
   );
