@@ -20,6 +20,7 @@ import { Container,  Navbar, Badge } from 'react-bootstrap';
 import MainMenuFooter from "./main-menu-footer";
 import min from "@/../public/minato/minologo.jpg";
 import Image from "next/image";
+import UserMenu from "./user-menu";
 
 
 const Header = () => {
@@ -61,29 +62,8 @@ const Header = () => {
           id="basic-navbar-nav"
         >
           <MainMenuFooter />
-          {/*      <Nav
-            className="me-auto" >
-            {metuItems.map((item) => (
-              <Nav.Link
-                style={{
-                  color: "#ffffffff",
-                  textDecoration: "none",
-                  padding: "5px 16px",
-                  fontWeight: "bold",
-                  fontSize: "1rem",
-                  fontFamily: "Rock Salt"
-                  
-                  
-                }}
-                href={item.url}
-                key={item.id}
-                prefettch={item.prefettch}
-                as={Link}
-              >
-                {item.title}
-              </Nav.Link>
-            ))}
-          </Nav> */}
+        <UserMenu/>
+
         </Navbar.Collapse>
       </Container>
     </Navbar>
