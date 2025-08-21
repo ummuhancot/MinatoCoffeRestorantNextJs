@@ -27,13 +27,17 @@ export default function LoginPage() {
   };
 
   return (
-    <Row className="login">
+    <Row>
       <Col sm={9} md={6} lg={5} xl={4} className="mx-auto mt-2">
         <Card>
-          <Card.Body>
-            <Card.Title>Login</Card.Title>
+          <Card.Body className="login">
+            <Card.Title className="bg-warning text-white p-3 text-center border productsHeader fs-1 ">
+              Login
+            </Card.Title>
 
-            {!state.ok && state.message && (<Alert variant="danger">{state.message}</Alert>)}
+            {!state.ok && state.message && (
+              <Alert variant="danger ">{state.message}</Alert>
+            )}
 
             <Form action={dispatch}>
               <Form.Group controlId="username">
@@ -68,30 +72,29 @@ export default function LoginPage() {
                 </FloatingLabel>
               </Form.Group>
 
-              <Form.Group className="mt-3">
+              <Form.Group className="mt-3 border">
                 <Button variant="dark" type="submit" className="w-100">
                   Login
                 </Button>
               </Form.Group>
 
-              <hr className="mt-4" />
-              <p className="text-center">Or</p>
+              <hr className="mt-4" style={{ color: "white" }} />
 
-              <Form.Group className="mt-3">
+              <Form.Group className="mt-3 border">
                 <Button
-                  variant="outline-dark"
+                  variant="dark"
                   className="w-100"
                   onClick={() => signInWithSocialsAction("github")}
                 >
-                  <div className="d-flex align-items-center justify-content-center gap-2">
+                  <div className="d-flex align-items-center justify-content-center gap-2 ">
                     <FaGithub /> Login with GitHub
                   </div>
                 </Button>
               </Form.Group>
 
-              <Form.Group className="mt-3">
+              <Form.Group className="mt-3 border">
                 <Button
-                  variant="outline-dark"
+                  variant="dark"
                   className="w-100"
                   onClick={() => signInWithSocialsAction("google")}
                 >

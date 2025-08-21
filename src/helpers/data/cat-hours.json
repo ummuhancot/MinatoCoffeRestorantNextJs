@@ -1,0 +1,12 @@
+[
+  { "id": 1, "minutes": 10, "price": 20 },
+  { "id": 2, "minutes": 30, "price": 50 },
+  { "id": 3, "hours": 1, "price": 90 },
+  { "id": 4, "hours": 2, "price": 170 },
+  { "id": 5, "hours": 3, "price": 250 },
+  { "id": 6, "hours": 4, "price": 330 },
+  { "id": 7, "hours": 5, "price": 410 },
+  { "id": 8, "hours": 6, "price": 490 },
+  { "id": 9, "hours": 7, "price": 570 },
+  { "id": 10, "hours": 8, "price": 650 }
+]

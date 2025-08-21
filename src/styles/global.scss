@@ -66,10 +66,23 @@ body{
 }
 
 .login{
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding: 30px;
+
+  margin: 2px;
+
   background-image: url("@/../../../public/minato/mi.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  background-position: center;
+  background-attachment: fixed;
+}
+
+
+.cat-mino{
+  margin-top: 50px;
+  margin-bottom:40px;
+  padding: 40px;
+  background-image: url("@/../../../public/cat-minato/cat-minoo.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
 

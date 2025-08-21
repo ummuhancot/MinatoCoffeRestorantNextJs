@@ -1,12 +1,14 @@
-export { auth as middleware } from "@/auth";
+import { withAuth } from "next-auth/middleware";
 
-export const config = {
-  //matcher'da verilen path'ler middleware'in spesifik olarak hangi path'lerde çalışacağını belirler.
-  matcher: [
-    "/",
-    "/products/:path*",
-    "/dashboard/:path*",
-    "/favicon.ico",
-    "/login",
-  ],
-};
+
+import { getSession } from "next-auth/react";
+
+export async function middleware(req) {
+  const session = await getSession({ req });
+
+  if (!session && req.nextUrl.pathname.startsWith("/dashboard")) {
+    return Response.redirect(new URL("/login", req.url));
+  }
+
+  return Response.next();
+}
