@@ -105,7 +105,8 @@ const DashboardProductEditForm = ({ user }) => {
             {/* Gizli inputlar */}
             <input type="hidden" name="id" value={user.id} />
             <input type="hidden" name="img" value={selectedCat.img} />
-            <input type="hidden" name="price" value={selectedCat.price} />
+            <input type="hidden" 
+            name="price" value={selectedCat.price} />
           </div>
         )}
 

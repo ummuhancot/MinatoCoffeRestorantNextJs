@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import React from "react";
 import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
@@ -8,13 +9,15 @@ const DashboardMenu = ({ children }) => {
   return (
     <Navbar expand="lg" className="bg-warning mb-3">
       <Container fluid>
-        <Navbar.Brand 
-        className="productsHeader"
-        style={{fontSize:"50px"}}
-        href="/dashboard"
-        as={Link}>
-          SARI
+        <Navbar.Brand
+          as={Link}
+          href="/dashboard"
+          className="productsHeader"
+          style={{ fontSize: "50px" }}
+        >
+          AO 青
         </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="dashboard-menu" />
         <Navbar.Offcanvas
           id="dashboard-menu"
@@ -27,11 +30,12 @@ const DashboardMenu = ({ children }) => {
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3 swiper">
               {menuItems.map((item) => (
-                <Nav.Link className="menu"
-                  key={item.id}
-                  href={item.url}
+                <Nav.Link
                   as={Link}
+                  href={item.url}
+                  key={item.id}
                   prefetch={item.prefetch}
+                  className="menu"
                 >
                   {item.title}
                 </Nav.Link>

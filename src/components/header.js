@@ -20,10 +20,9 @@ import { Container,  Navbar, Badge } from 'react-bootstrap';
 import MainMenuFooter from "./main-menu-footer";
 import min from "@/../public/minato/minologo.jpg";
 import Image from "next/image";
-import UserMenu from "./user-menu";
 
 
-const Header = () => {
+const Header = ( {children}) => {
   return (
     <Navbar expand="lg" collapseOnSelect data-bs-theme="dark">
       <Container>
@@ -33,7 +32,7 @@ const Header = () => {
             alt="minato"
             width="150"
             height="200"
-            className="d-inline-block align-top me-5 "
+            className="d-inline-block align-top me-3 "
             style={{ borderRadius: "50%" }}
           />
           <Badge
@@ -44,13 +43,13 @@ const Header = () => {
           >
             AO 青
           </Badge>
-          <Badge
+         {/*  <Badge
             bg="dark"
             className="d-flex align-items-center  "
             style={{ borderRadius: "8px", padding: "4px" }}
           >
             <PiBowlSteam color="#ffeb3b" size={30} />
-          </Badge>
+          </Badge> */}
         </Navbar.Brand>
         <Navbar.Toggle
           className="bg-warning-subtle "
@@ -62,8 +61,7 @@ const Header = () => {
           id="basic-navbar-nav"
         >
           <MainMenuFooter />
-        <UserMenu/>
-
+          {children}
         </Navbar.Collapse>
       </Container>
     </Navbar>

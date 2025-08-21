@@ -1,6 +1,8 @@
 import Slider from '@/components/slider-carousel';
 import React from 'react'
 
+
+
 const Page = () => {
   return (
     // slider-carousel kısmını buraya koydum

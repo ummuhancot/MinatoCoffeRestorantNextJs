@@ -1,8 +1,9 @@
 import NextAuth from "next-auth";
 import GitHub from "next-auth/providers/github";
 import Google from "next-auth/providers/google"
-import Credentials from "next-auth/providers/credentials";
-import { headers } from "next/headers";
+import Credentials from "next-auth/providers/credentials";  
+import { NextResponse } from "next/server";
+
 
 const credentialsConfig = {
     credentials:{
@@ -15,7 +16,7 @@ const credentialsConfig = {
 
     },
     
-      authorize: async (credentials) =>{
+    authorize: async (credentials) =>{
 
         const res = await fetch('https://dummyjson.com/auth/login',{method:"post",
           headers:{"Content-Type":"application/json"},
@@ -29,25 +30,38 @@ const credentialsConfig = {
         return user;
 
 
-      }
+    }
+
+    
    
 }
 
-
-
 const nextAuthconfig = {
-  providers: [GitHub,Google,Credentials(credentialsConfig)],
-  callbacks:{
-    authorized({auth,request}){
+  providers: [GitHub, Google, Credentials(credentialsConfig)],
+  callbacks: {
+    authorized({ auth, request }) {
+      const { pathname,origin,searchParams } = request.nextUrl;
 
-      const {pathname} = request.nextUrl;
+      const isUserInLoginPage = pathname.startsWith("/login");
 
-      if(pathname.startsWith("/dashboard")) return !!auth;
+      const isUserLogin = !!auth;
 
+      if(isUserLogin && isUserInLoginPage){
+
+        const callbacksURL = searchParams.get("callbackUrl") || `${origin}/dashboard`
+
+        return NextResponse.redirect(callbacksURL);
+      }
+
+      if (pathname.startsWith("/dashboard")) return isUserLogin;
 
       return true;
-    }
-  }
+    },
+  },
+
+  pages: {
+    signIn: "/login",
+  },
 };
 
 export const { handlers, signIn, signOut, auth } = NextAuth(nextAuthconfig);

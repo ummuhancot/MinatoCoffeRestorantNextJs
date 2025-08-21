@@ -56,12 +56,20 @@ body{
   }
 }
 
-
-
-
-
 .sunny {
   background-image: url("@/../../../public/dogafoto/sun.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.login{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 30px;
+  background-image: url("@/../../../public/minato/mi.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
 
