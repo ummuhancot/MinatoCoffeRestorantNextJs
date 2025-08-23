@@ -1,4 +1,5 @@
 "use server";
+
 import { signIn } from "@/auth";
 import { yupErrorToObject } from "@/helpers/form-validation";
 import { AuthError } from "next-auth";
@@ -10,7 +11,7 @@ const loginSchema = Yup.object({
 });
 
 export const signInWithCredentialsAction = async (prevState, formData) => {
-  const credentials = Object.fromEntries(formData.entries());
+  const credentials = Object.fromEntries(formData);
 
   try {
     loginSchema.validateSync(credentials, { abortEarly: false });
@@ -21,7 +22,7 @@ export const signInWithCredentialsAction = async (prevState, formData) => {
     } else if (error instanceof AuthError) {
       return {
         ok: false,
-        message: "",
+        message: "Username or password is incorrect!",
         errors: null,
       };
     } else {
@@ -31,10 +32,5 @@ export const signInWithCredentialsAction = async (prevState, formData) => {
 };
 
 export const signInWithSocialsAction = async (provider) => {
-  
-   await signIn(provider, {
-    redirectTo: "/",
-    });
-
   await signIn(provider);
 };

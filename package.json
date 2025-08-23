@@ -9,22 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth/core": "^0.34.2",
     "@restart/hooks": "^0.6.2",
     "bootstrap": "^5.3.7",
     "next": "15.3.5",
-    "next-auth": "^4.24.11",
+    "next-auth": "^5.0.0-beta.29",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^18.3.1",
     "react-icons": "^5.5.0",
     "swiper": "^11.2.10",
     "uncontrollable": "^9.0.0",
-    "yup": "^1.6.1"
+    "yup": "^1.7.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "eslint": "^9",
     "eslint-config-next": "15.3.5",
-    "sass": "^1.89.2"
+    "sass": "^1.90.0"
   }
 }

@@ -97,7 +97,7 @@ const UserMenu = async () => {
           alt="Login"
           as={Link}
         >
-          Login
+          Login 
         </NavLink>
       )}
     </div>

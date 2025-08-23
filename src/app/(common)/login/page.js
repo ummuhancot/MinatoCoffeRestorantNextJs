@@ -1,18 +1,18 @@
-import LoginForm from '@/components/login-form';
-import React from 'react'
-
+import React from "react";
+import { LoginForm } from "@/components/login-form";
 
 export const metadata = {
-  title: "login",
-  description: "coffe of AO 青",
+  title: "Login",
+  description: "Login to your account",
 };
 
 const Page = () => {
   return (
-    <div className='login mt-3 mb-3'>
+    <div className="login">
+
       <LoginForm/>
     </div>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;
