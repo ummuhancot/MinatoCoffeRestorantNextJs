@@ -30,7 +30,11 @@ const Footer = () => {
           boxShadow: "0 10px 20px rgba(221, 0, 255, 0.72)",
         }}
         onClick={() =>
-          window.open("https://instagram.com/", "_blank", "noopener,noreferrer")
+          window.open(
+            "https://www.instagram.com/_wayward_and_angry_/",
+            "_blank",
+            "noopener,noreferrer"
+          )
         }
         onMouseEnter={(e) => (e.currentTarget.style.color = "#E1306C")}
         onMouseLeave={(e) => (e.currentTarget.style.color = "#ffeb3b")}
@@ -49,7 +53,11 @@ const Footer = () => {
           boxShadow: "0 15px 20px rgba(4, 0, 255, 0.72)",
         }}
         onClick={() =>
-          window.open("https://facebook.com/", "_blank", "noopener,noreferrer")
+          window.open(
+            "https://www.facebook.com/ummuhan.cot/",
+            "_blank",
+            "noopener,noreferrer"
+          )
         }
         onMouseEnter={(e) => (e.currentTarget.style.color = "#1877F3")}
         onMouseLeave={(e) => (e.currentTarget.style.color = "#ffeb3b")}
