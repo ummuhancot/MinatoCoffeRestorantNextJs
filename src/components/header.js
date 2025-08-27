@@ -24,7 +24,12 @@ import Image from "next/image";
 
 const Header = ( {children}) => {
   return (
-    <Navbar expand="lg" collapseOnSelect data-bs-theme="dark">
+    <Navbar
+      expand="lg"
+      collapseOnSelect
+      data-bs-theme="dark"
+     
+    >
       <Container>
         <Navbar.Brand href="/" as={Link} className="d-flex align-items-center ">
           <Image
@@ -43,7 +48,7 @@ const Header = ( {children}) => {
           >
             AO 青
           </Badge>
-         {/*  <Badge
+          {/*  <Badge
             bg="dark"
             className="d-flex align-items-center  "
             style={{ borderRadius: "8px", padding: "4px" }}

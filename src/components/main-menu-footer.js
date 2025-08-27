@@ -19,7 +19,7 @@ const MainMenuFooter= (props) => {
             color: "black",
             position: "relative",
             zIndex: 1,
-            fontSize: "1rem",
+            fontSize: "15px",
             maxWidth: "90%",
             boxShadow: "0 4px 20px rgba(140, 113, 61, 0.28)",
             fontWeight: "600",
